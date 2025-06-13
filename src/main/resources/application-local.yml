@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: api1
+  devtools:
+    livereload.enabled: true
+    restart.enabled: true
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: ENC(5lo8/LM93IGmKPCaZ8d/ETKZFD/mVlBS3HkUiPSJ95FeIXoxLGPljUYa5UNWLEM2XvD7fkNVCpw=)
+    hikari:
+      username: ENC(6YZuC9j+D9ABcW44cgKqBw==)
+      password: ENC(Ebgi0IhX5ZqSXyc2XhGLcQ==)
+      connectionTimeout: 10000
+      maximum-pool-size: 15
+      max-lifetime: 600000
+      readOnly: false
+      connection-test-query: SELECT 1
+
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
+  type-aliases-package: ENC(g+76UJuJbz46qT9bLQVOn6D/YWpnQhdTWBrwY1sE7/IaOXKszVnwoTE/xbx4nxT0)
+  configuration:
+    jdbc-type-for-null: NULL
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    use-column-label: true
+    map-underscore-to-camel-case: true
+    default-statement-timeout: 25000
+
+jasypt:
+  encryptor:
+    # JasyptConfig? ??? ? ??
+    bean: jasyptStringEncryptor
+    property:
+      prefix: ENC(
+      suffix: )
