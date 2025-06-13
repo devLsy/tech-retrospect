@@ -10,14 +10,20 @@
 
     <!-- 회원 상세 조회 -->
     <select id="selectMemberById" resultType="MemberVo" parameterType="String">
-        SELECT member_id, name, email, created_at
+        SELECT member_id
+             , name
+             , email
+             , created_at
         FROM Member
         WHERE member_id = #{memberId}
     </select>
 
     <!-- 회원 전체 조회 -->
     <select id="selectAllMembers" resultType="MemberVo">
-        SELECT member_id, name, email, created_at
+        SELECT member_id
+             , name
+             , email
+             , created_at
         FROM Member
     </select>
 
