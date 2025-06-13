@@ -10,5 +10,6 @@ public interface MemberMapper {
     int insertMember(MemberVo memberVo);
     MemberVo selectMemberById(String memberId);
     List<MemberVo> selectAllMembers();
+    int updateMember(MemberVo memberVo);
     int deleteMember(String memberId);
 }

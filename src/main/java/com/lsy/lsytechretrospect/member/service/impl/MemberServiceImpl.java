@@ -65,6 +65,15 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public ResponseEntity updateMember(MemberVo memberVo, BindingResult br) throws Exception {
+        int result = memberMapper.updateMember(memberVo);
+        Map<String, Object> returnMap = new HashMap<String, Object>();
+
+        returnMap.put("result", result > 0 ? "success" : "fail");
+        return new ResponseEntity<>(returnMap, HttpStatus.OK);
+    }
+
+    @Override
     public ResponseEntity deleteMember(String memberId) throws Exception {
         int result = memberMapper.deleteMember(memberId);
         Map<String, Object> returnMap = new HashMap<String, Object>();

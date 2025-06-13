@@ -36,4 +36,9 @@ public class MemberController {
     public ResponseEntity deleteMemberById(@PathVariable(name = "memberId") String memberId) throws Exception {
         return memberService.deleteMember(memberId);
     }
+
+    @PutMapping
+    public ResponseEntity updateMember(@Valid @RequestBody MemberVo memberVo, BindingResult br) throws Exception {
+        return memberService.updateMember(memberVo, br);
+    }
 }
