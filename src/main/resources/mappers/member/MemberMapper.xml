@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lsy.lsytechretrospect.member.mapper.MemberMapper">
+    <!-- 회원 등록 -->
+    <insert id="insertMember" parameterType="MemberVo">
+        INSERT INTO Member (member_id, name, email)
+        VALUES (#{memberId}, #{name}, #{email})
+    </insert>
+
+    <!-- 회원 상세 조회 -->
+    <select id="selectMemberById" resultType="MemberVo" parameterType="String">
+        SELECT member_id, name, email, created_at
+        FROM Member
+        WHERE member_id = #{memberId}
+    </select>
+
+    <!-- 회원 전체 조회 -->
+    <select id="selectAllMembers" resultType="MemberVo">
+        SELECT member_id, name, email, created_at
+        FROM Member
+    </select>
+
+    <!-- 회원 삭제 -->
+    <delete id="deleteMember" parameterType="String">
+        DELETE FROM Member WHERE member_id = #{memberId}
+    </delete>
+
+</mapper>
