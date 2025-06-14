@@ -6,15 +6,15 @@
     <insert id="insertMember" parameterType="MemberVo">
         INSERT INTO Member
         (
-              member_id
-            , name
-            , email
+            member_id
+          , name
+          , email
         )
         VALUES
         (
-              #{memberId}
-            , #{name}
-            , #{email}
+            #{memberId}
+          , #{name}
+          , #{email}
         )
     </insert>
 

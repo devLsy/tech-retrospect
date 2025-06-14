@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class MemberVo {
@@ -21,4 +23,6 @@ public class MemberVo {
 
     @Schema(hidden = true)
     private LocalDateTime createdAt;
+
+    List<AffiliateHistoryVo> affiliateHistoryList = new ArrayList<>();
 }

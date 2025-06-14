@@ -17,6 +17,7 @@ public class MemberController {
 
     private final MemberService memberService;
 
+
     @PostMapping
     public ResponseEntity insertBanner(@Valid @RequestBody MemberVo memberVo, BindingResult br) throws Exception {
         return memberService.insertMember(memberVo, br);
